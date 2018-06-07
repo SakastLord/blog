@@ -74,7 +74,7 @@
 <link href="/blog/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="前端,javascript," />
+  <meta name="keywords" content="npm," />
 
 
 
@@ -90,18 +90,18 @@
 
 
 
-<meta name="description" content="由工作中的偶然引发的深思，js的(&amp;gt; &amp;lt;)比较到底是怎么执行的">
-<meta name="keywords" content="前端,javascript">
+<meta name="description" content="本篇讲述了npm命令大全">
+<meta name="keywords" content="npm">
 <meta property="og:type" content="article">
-<meta property="og:title" content="浅谈字符串的比较">
-<meta property="og:url" content="https://liqiangzhao.github.io/浅谈字符串的比较/index.html">
+<meta property="og:title" content="NPM常用命令">
+<meta property="og:url" content="https://liqiangzhao.github.io/NPM常用命令/index.html">
 <meta property="og:site_name" content="Blend-Zlq">
-<meta property="og:description" content="由工作中的偶然引发的深思，js的(&amp;gt; &amp;lt;)比较到底是怎么执行的">
+<meta property="og:description" content="本篇讲述了npm命令大全">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-06-15T01:24:33.061Z">
+<meta property="og:updated_time" content="2018-06-07T03:22:36.892Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="浅谈字符串的比较">
-<meta name="twitter:description" content="由工作中的偶然引发的深思，js的(&amp;gt; &amp;lt;)比较到底是怎么执行的">
+<meta name="twitter:title" content="NPM常用命令">
+<meta name="twitter:description" content="本篇讲述了npm命令大全">
 
 
 
@@ -129,13 +129,13 @@
 
 
 
-  <link rel="canonical" href="https://liqiangzhao.github.io/浅谈字符串的比较/"/>
+  <link rel="canonical" href="https://liqiangzhao.github.io/NPM常用命令/"/>
 
 
 
 
 
-  <title>浅谈字符串的比较 | Blend-Zlq</title>
+  <title>NPM常用命令 | Blend-Zlq</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -264,7 +264,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://liqiangzhao.github.io/blog/浅谈字符串的比较/">
+    <link itemprop="mainEntityOfPage" href="https://liqiangzhao.github.io/blog/NPM常用命令/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Liqiang Zhao">
@@ -285,7 +285,7 @@
             
             
               
-                浅谈字符串的比较
+                NPM常用命令
               
             
           </h1>
@@ -300,8 +300,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-05T15:52:00+08:00">
-                2017-06-05
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-07T10:59:13+08:00">
+                2018-06-07
               </time>
             
 
@@ -323,8 +323,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/blog/categories/前端/" itemprop="url" rel="index">
-                    <span itemprop="name">前端</span>
+                  <a href="/blog/categories/npm/" itemprop="url" rel="index">
+                    <span itemprop="name">npm</span>
                   </a>
                 </span>
 
@@ -342,8 +342,8 @@
                 <i class="fa fa-comment-o"></i>
               </span>
               
-                <a href="/blog/浅谈字符串的比较/#SOHUCS" itemprop="discussionUrl">
-                  <span id="changyan_count_unit" class="post-comments-count hc-comment-count" data-xid="浅谈字符串的比较/" itemprop="commentsCount"></span>
+                <a href="/blog/NPM常用命令/#SOHUCS" itemprop="discussionUrl">
+                  <span id="changyan_count_unit" class="post-comments-count hc-comment-count" data-xid="NPM常用命令/" itemprop="commentsCount"></span>
                 </a>
               
             
@@ -368,21 +368,32 @@
       
 
       
-        <p>由工作中的偶然引发的深思，js的(&gt; &lt;)比较到底是怎么执行的<br><a id="more"></a></p>
-<h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><blockquote><p>今天工作的时候碰到一个问题在判断用户要花费的金额跟用户钱包里的金额时，代码一直不按我设置好的路线执行，调试一番，发现是判断出了问题。</p>
+        <p>本篇讲述了npm命令大全<br><a id="more"></a></p>
+<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><blockquote><p>NPM是随同NodeJS一起安装的包管理工具，能解决NodeJS代码部署上的很多问题</p>
 </blockquote>
-<h2 id="出现的问题是这样的"><a href="#出现的问题是这样的" class="headerlink" title="出现的问题是这样的"></a>出现的问题是这样的</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var price=document.getElementById(<span class="string">'price'</span>).value;  //<span class="string">'500'</span></span><br><span class="line">var balance=document.getElementById(<span class="string">'balance'</span>).value;  //<span class="string">"177550.00"</span></span><br><span class="line"><span class="keyword">if</span>(price &gt; balance)&#123;</span><br><span class="line">... code....</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<blockquote><p>很明显的可以看到这个条件是不会通过的，问题就是在这里条件通过了。而且我记忆中，在javascript中，比较是会自动转义的。<br>比如：</p>
+<h2 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h2><blockquote><p>允许用户从NPM服务器下载别人编写的第三方包到本地使用。<br>允许用户从NPM服务器下载并安装别人编写的命令行程序到本地使用。<br>允许用户将自己编写的包或命令行程序上传到NPM服务器供别人使用。</p>
 </blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(<span class="string">'85'</span>&gt;50)&#123;</span><br><span class="line"> ... code ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<blockquote><p>那么这里是肯定会执行的，因为在javascript中，会自动把字符串’85’转义成为数字85，然后进行比较、<br>那么字符串的比较是怎么回事呢，它是怎么运行的</p>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><blockquote><p>请确保你电脑已经装了node,npm </p>
 </blockquote>
-<h2 id="字符串与字符串相比"><a href="#字符串与字符串相比" class="headerlink" title="字符串与字符串相比"></a>字符串与字符串相比</h2><blockquote><p>如果字符串长度是0的情况，就可以直接比较出大小。<br>最后才是关键，按每个字符的 charCode 大小进行比较，直到分出大小为止。<br>在这里就是</p>
+<p>可使用</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm -v  </span><br><span class="line">node -v</span><br></pre></td></tr></table></figure>
+<p>来检测</p>
+<h3 id="init"><a href="#init" class="headerlink" title="init"></a>init</h3><blockquote><p>新建一个package.json文件 会有一些问题，根据你的答案会生成不同的json文件</p>
 </blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">price[0]=<span class="string">"5"</span>;</span><br><span class="line">balance[0]=<span class="string">'1'</span>;</span><br></pre></td></tr></table></figure>
-<p>很明显的就看出来<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">price[0]&gt;banlance[0]</span><br></pre></td></tr></table></figure></p>
-<p>如果他们相等，那么就比较下一个。差不多就重复这样的步骤进行对比，直到分出大小或者全部对比结束为止。而不简单的比较字符串长度。</p>
-<h2 id="概括"><a href="#概括" class="headerlink" title="概括"></a>概括</h2><p>一句话概括就是按照字典序进行对比</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm init</span><br></pre></td></tr></table></figure>
+<h4 id="tip"><a href="#tip" class="headerlink" title="tip"></a>tip</h4><p>我们为了方便可使用<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm init -y</span><br></pre></td></tr></table></figure></p>
+<p>快速创建一个package.json 当然都是默认你选了yes的情况下</p>
+<h3 id="install"><a href="#install" class="headerlink" title="install"></a>install</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm install XX  // 在当前目录下安装XX依赖</span><br><span class="line">npm install --global XX  // 在全局目录安装XX依赖</span><br><span class="line">   npm install XX -g      // 简写</span><br></pre></td></tr></table></figure>
+<h3 id="remove或者是uninstall"><a href="#remove或者是uninstall" class="headerlink" title="remove或者是uninstall"></a>remove或者是uninstall</h3><p>移除某个依赖<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm remove/uninstall XX  // 在当前目录下删除XX依赖</span><br><span class="line">npm remove/uninstall --global XX  // 在全局目录删除XX依赖</span><br><span class="line">   npm remove/uninstall XX -g      // 简写</span><br></pre></td></tr></table></figure></p>
+<h3 id="list"><a href="#list" class="headerlink" title="list"></a>list</h3><p>查看当前目录下所有的依赖<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm list</span><br><span class="line">npm ls 		// 简写</span><br></pre></td></tr></table></figure></p>
+<h3 id="info"><a href="#info" class="headerlink" title="info"></a>info</h3><p>查看某一个依赖的信息<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm info XX</span><br></pre></td></tr></table></figure></p>
+<p>包括 基本说明，版本号等</p>
+<h3 id="outdated"><a href="#outdated" class="headerlink" title="outdated"></a>outdated</h3><p>查看当前目录下的依赖是否需要更新<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm outdated</span><br></pre></td></tr></table></figure></p>
+<h3 id="update"><a href="#update" class="headerlink" title="update"></a>update</h3><p>更新当前目录<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm update</span><br></pre></td></tr></table></figure></p>
+<h2 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h2><p>全局更新npm<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install npm -g</span><br></pre></td></tr></table></figure></p>
+<p>可使用 npm -v 来查看版本检测是否更新成功</p>
+<h2 id="小工具"><a href="#小工具" class="headerlink" title="小工具"></a>小工具</h2><p>介绍一个依赖 nrm<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">npm install -g nrm  //全局安装nrm</span><br><span class="line">nrm ls 			//查看当前可用源 带*的是目前用的</span><br><span class="line">nrm <span class="built_in">test</span>       // 测试哪个源速度最快  时间越少速度越快</span><br><span class="line">nrm use XX     // 切换到某一圆</span><br></pre></td></tr></table></figure></p>
+<h2 id="以上！"><a href="#以上！" class="headerlink" title="以上！"></a>以上！</h2><p><span id="busuanzi_container_page_pv"><br>  本文总阅读量<span id="busuanzi_value_page_pv"></span>次<br></span></p>
 
       
     </div>
@@ -432,9 +443,7 @@
       
         <div class="post-tags">
           
-            <a href="/blog/tags/前端/" rel="tag"># 前端</a>
-          
-            <a href="/blog/tags/javascript/" rel="tag"># javascript</a>
+            <a href="/blog/tags/npm/" rel="tag"># npm</a>
           
         </div>
       
@@ -447,8 +456,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/上传文件/" rel="next" title="上传文件">
-                <i class="fa fa-chevron-left"></i> 上传文件
+              <a href="/blog/小程序中实现layer一样的提示/" rel="next" title="小程序中实现layer一样的提示">
+                <i class="fa fa-chevron-left"></i> 小程序中实现layer一样的提示
               </a>
             
           </div>
@@ -456,10 +465,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/blog/Hexo中添加网易云的实践/" rel="prev" title="Hexo中添加网易云的实践">
-                Hexo中添加网易云的实践 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -613,7 +618,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#起因"><span class="nav-number">1.</span> <span class="nav-text">起因</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#出现的问题是这样的"><span class="nav-number">2.</span> <span class="nav-text">出现的问题是这样的</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字符串与字符串相比"><span class="nav-number">3.</span> <span class="nav-text">字符串与字符串相比</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#概括"><span class="nav-number">4.</span> <span class="nav-text">概括</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#介绍"><span class="nav-number">1.</span> <span class="nav-text">介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#作用"><span class="nav-number">2.</span> <span class="nav-text">作用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用"><span class="nav-number">3.</span> <span class="nav-text">使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#init"><span class="nav-number">3.1.</span> <span class="nav-text">init</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#tip"><span class="nav-number">3.1.1.</span> <span class="nav-text">tip</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#install"><span class="nav-number">3.2.</span> <span class="nav-text">install</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#remove或者是uninstall"><span class="nav-number">3.3.</span> <span class="nav-text">remove或者是uninstall</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#list"><span class="nav-number">3.4.</span> <span class="nav-text">list</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#info"><span class="nav-number">3.5.</span> <span class="nav-text">info</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#outdated"><span class="nav-number">3.6.</span> <span class="nav-text">outdated</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#update"><span class="nav-number">3.7.</span> <span class="nav-text">update</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更新"><span class="nav-number">4.</span> <span class="nav-text">更新</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小工具"><span class="nav-number">5.</span> <span class="nav-text">小工具</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#以上！"><span class="nav-number">6.</span> <span class="nav-text">以上！</span></a></li></ol></div>
             
 
           </div>
